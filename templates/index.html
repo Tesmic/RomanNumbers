@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Number Conversion</title>
+</head>
+<body>
+  
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+<div class="content">
+    <h1 style="text-align: center"; >Calculate Roman Numerals(below 3000)</h1>
+    <h2 style="text-align: center;font-size:24;width:500px;height:30px;background-color:#ffcc00;">Input Number:&nbsp;&nbsp;&nbsp;&nbsp;{{temp.number}}</h2>
+    <h2 style="text-align: center;font-size:24;width:500px;height:30px;background-color:#ffcc00;">Roman Numerals:&nbsp;&nbsp;&nbsp;&nbsp;{{roman}}</h2>
+    
+    <h3 style="color:navy;">Number </h3> 
+    
+    
+    <div class="form">
+        <form action="/calculate" method="POST">
+          {% csrf_token %}
+            <input type="text" name="number" id="number" value={{temp.number}}>
+           
+            <br>
+            <br>
+            <input type="submit" value="            Calculate           ">
+        </form>
+    </div>
+</div>
+
+<br>
+<!-- commented -->
+<!--<h2 style="text-align: center"> {{a}} </h2>  -->
+
+</body>
+<html>
